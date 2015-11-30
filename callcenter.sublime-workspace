@@ -1,0 +1,1377 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"reso",
+				"resource_class"
+			],
+			[
+				"bid_exceptio",
+				"bid_exception_1"
+			],
+			[
+				"assigned",
+				"assigned_supplier"
+			],
+			[
+				"primar",
+				"primary_landmark_id"
+			],
+			[
+				"block_id_",
+				"block_id_neighborhoods"
+			],
+			[
+				"block_",
+				"block_id_desludgers"
+			],
+			[
+				"s_h",
+				"s_phonenumber"
+			],
+			[
+				"neighborhoods_",
+				"neighborhoods_serviced__in"
+			],
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"Huse",
+				"HouseholdBid"
+			],
+			[
+				"House",
+				"HouseholdBidForm"
+			],
+			[
+				"Househ",
+				"HouseholdForm"
+			],
+			[
+				"neigh",
+				"neighborhood_related"
+			],
+			[
+				"neighb",
+				"neighborhood_name"
+			],
+			[
+				"Nei",
+				"Neighborhood"
+			],
+			[
+				"Neigh",
+				"NeighborhoodForm"
+			],
+			[
+				"max_",
+				"max_length"
+			],
+			[
+				"mandel",
+				"mandel_aspect_ratio"
+			],
+			[
+				"n",
+				"nsmooth"
+			],
+			[
+				"esca",
+				"escape_iter_max"
+			],
+			[
+				"max",
+				"iter_max"
+			],
+			[
+				"test",
+				"test"
+			],
+			[
+				"vecS",
+				"vecMultScalar"
+			],
+			[
+				"radio",
+				"radiosity_rays"
+			],
+			[
+				"radios",
+				"radios_index"
+			],
+			[
+				"radiosity",
+				"radiosity_r"
+			],
+			[
+				"inital",
+				"initial_radiosity"
+			],
+			[
+				"initi",
+				"initial_radiosity"
+			],
+			[
+				"init",
+				"initial_radiosity"
+			],
+			[
+				"first",
+				"firstTry"
+			],
+			[
+				"questions",
+				"questionsDict"
+			],
+			[
+				"question",
+				"questionsSubset"
+			],
+			[
+				"random",
+				"randomize_selection"
+			],
+			[
+				"right",
+				"rightAnswer"
+			],
+			[
+				"que",
+				"questionsDict"
+			],
+			[
+				"split",
+				"split_line"
+			],
+			[
+				"get",
+				"get_texture"
+			],
+			[
+				"new",
+				"new_color"
+			],
+			[
+				"texture",
+				"textureList"
+			],
+			[
+				"vec",
+				"vecMultScalar"
+			],
+			[
+				"textur",
+				"textureList"
+			],
+			[
+				"tex",
+				"texture_index"
+			],
+			[
+				"readExp",
+				"readExprList"
+			],
+			[
+				"primti",
+				"primitiveBindings"
+			],
+			[
+				"pla",
+				"plane_D"
+			],
+			[
+				"ve",
+				"vecSub"
+			],
+			[
+				"parti",
+				"partial_bary_e3"
+			],
+			[
+				"partial",
+				"partial_bary_e1"
+			],
+			[
+				"n_do",
+				"n_dot_res3"
+			],
+			[
+				"p_minus",
+				"p_minus_v1"
+			],
+			[
+				"bu",
+				"bulb"
+			],
+			[
+				"bul",
+				"bulb"
+			],
+			[
+				"draw",
+				"drawColor"
+			],
+			[
+				"col",
+				"pixel_collisions"
+			],
+			[
+				"pixel",
+				"pixel_norm"
+			],
+			[
+				"Sphere",
+				"sphereList"
+			],
+			[
+				"start",
+				"xStart"
+			],
+			[
+				"vert",
+				"vertexList"
+			],
+			[
+				"uni",
+				"unique_sorta"
+			],
+			[
+				"scan",
+				"scanConvertPoly"
+			],
+			[
+				"bez",
+				"bezncCalc"
+			],
+			[
+				"control",
+				"controlPoints"
+			],
+			[
+				"contro",
+				"controlPoints"
+			],
+			[
+				"contr",
+				"controlPoints"
+			],
+			[
+				"bcc",
+				"bccd_x"
+			],
+			[
+				"cubicc",
+				"cubiccLerp"
+			],
+			[
+				"cub",
+				"cubicclerp"
+			],
+			[
+				"p1_",
+				"p1_x"
+			],
+			[
+				"bot",
+				"bot_alpha"
+			],
+			[
+				"alpha",
+				"alpha"
+			],
+			[
+				"grad_",
+				"grad_b"
+			],
+			[
+				"gra",
+				"grad_r"
+			],
+			[
+				"bottom",
+				"bottomHorizontal"
+			],
+			[
+				"v1_",
+				"v1_y"
+			],
+			[
+				"ab",
+				"abCoords"
+			],
+			[
+				"temp",
+				"tempList"
+			],
+			[
+				"tem",
+				"temp_x"
+			],
+			[
+				"Image",
+				"ImageColor"
+			],
+			[
+				"line",
+				"linec"
+			],
+			[
+				"to_",
+				"to_str_radix"
+			],
+			[
+				"real",
+				"realX"
+			],
+			[
+				"mo",
+				"modelX"
+			],
+			[
+				"comp",
+				"computeModelCoords"
+			],
+			[
+				"absolute",
+				"absoluteX"
+			],
+			[
+				"abs",
+				"absoluteY"
+			],
+			[
+				"absol",
+				"absoluteY"
+			],
+			[
+				"abso",
+				"absoluteX"
+			],
+			[
+				"rel",
+				"relativeY"
+			],
+			[
+				"Trilat",
+				"trilatResult"
+			],
+			[
+				"tri",
+				"trilatResult"
+			],
+			[
+				"relative",
+				"relativeX"
+			],
+			[
+				"DEFA",
+				"DEFAULT_CACHE_REFRESH_RATE_MILLIS"
+			],
+			[
+				"pro",
+				"prog_argv"
+			],
+			[
+				"child",
+				"child_cache"
+			],
+			[
+				"prog",
+				"prog_argv"
+			],
+			[
+				"from_",
+				"from_utf8"
+			],
+			[
+				"as",
+				"as_bytes"
+			],
+			[
+				"sche",
+				"sched_msg"
+			],
+			[
+				"CAC",
+				"CACHE_MANAGER_B_INNER_RATE"
+			],
+			[
+				"serve",
+				"serve_greeting"
+			],
+			[
+				"fileName",
+				"fileNameSplit"
+			],
+			[
+				"fileType",
+				"fileTypeSplit"
+			],
+			[
+				"actual",
+				"actual_count2"
+			],
+			[
+				"shared",
+				"shared_visit2"
+			],
+			[
+				"safe",
+				"safe_count2"
+			],
+			[
+				"to",
+				"to_owned"
+			],
+			[
+				"CA",
+				"CACHE_MANAGER_A_RATE"
+			],
+			[
+				"cache",
+				"cache_remaining"
+			],
+			[
+				"in",
+				"in_use_flag"
+			],
+			[
+				"file",
+				"filepath"
+			],
+			[
+				"shared_",
+				"shared_cache_list"
+			],
+			[
+				"tf",
+				"tfRight"
+			],
+			[
+				"stream",
+				"streamPriority"
+			],
+			[
+				"strem",
+				"streamPriority"
+			],
+			[
+				"ip",
+				"ipSplit"
+			],
+			[
+				"pri",
+				"priority_queue"
+			],
+			[
+				"sch",
+				"sched_msg"
+			],
+			[
+				"dis",
+				"displayProducts"
+			],
+			[
+				"echo",
+				"echoArgv"
+			],
+			[
+				"return",
+				"returnProcess"
+			],
+			[
+				"hist",
+				"hist_output_string"
+			],
+			[
+				"read",
+				"read_lines"
+			],
+			[
+				"next",
+				"nextInputArray"
+			],
+			[
+				"input",
+				"inputProcessResult"
+			],
+			[
+				"use",
+				"useInput"
+			],
+			[
+				"prev",
+				"prevOutputArray"
+			],
+			[
+				"pre",
+				"prevOutputArray"
+			],
+			[
+				"prv",
+				"prevOutputArray"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "views.py",
+			"settings":
+			{
+				"buffer_size": 14727,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "forms.py",
+			"settings":
+			{
+				"buffer_size": 2816,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/callcenterapp/household_edit.html",
+			"settings":
+			{
+				"buffer_size": 3751,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/callcenterapp/household_detail.html",
+			"settings":
+			{
+				"buffer_size": 5261,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/callcenterapp/neighborhood_detail.html",
+			"settings":
+			{
+				"buffer_size": 3813,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/callcenterapp/householdbid_detail.html",
+			"settings":
+			{
+				"buffer_size": 11732,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/callcenterapp/household_list.html",
+			"settings":
+			{
+				"buffer_size": 3796,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/callcenterapp/household_search.html",
+			"settings":
+			{
+				"buffer_size": 3863,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/callcenterapp/index.html",
+			"settings":
+			{
+				"buffer_size": 2663,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/registration/login.html",
+			"settings":
+			{
+				"buffer_size": 1892,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models.py",
+			"settings":
+			{
+				"buffer_size": 15565,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "admin.py",
+			"settings":
+			{
+				"buffer_size": 1450,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "urls.py",
+			"settings":
+			{
+				"buffer_size": 1840,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install package",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 561.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"python views.py",
+			"run",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": true,
+		"show_open_files": false,
+		"show_tabs": true,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/registration"
+	],
+	"file_history":
+	[
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/householdbid_detail.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/forms.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/admin.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/models.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/run.bat",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/neighborhood_detail.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/household_detail.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/household_list.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/household_newnonsurvey.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/household_search.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/supplier_detail.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/supplier_list.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/supplierbid_detail.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/views.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/payment_detail.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/neighborhood_list.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/registration/login.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/urls.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/supplierbid_new.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/base.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/index.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/static/js/datepicker-fr.js",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/householdbid_list.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/householdbid_markcompleted.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/householdbid_new.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/payment_list.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/supplierbid_list.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/householdbid_changesupplier.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/householdbid_cancelbid.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenter/settings.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenter/urls.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/callcenterapp/templates/callcenterapp/supplybid_list.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Jobs/Palantir/interview.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/CCI/intersectpairs.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/CCI/incseq.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/CCI/longincseq.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/CCI/calc.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/IPAv3/callcenter/static/css/callcenterapp.css",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/CCI/num2str.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/CCI/giftpath.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/CCI/11.1.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/ideas.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/static/css/callcenterapp.css",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/templates/callcenterapp/base.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/templates/callcenterapp/neighborhood_detail.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/templates/callcenterapp/neighborhood_list.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/templates/callcenterapp/neighborhood_edit.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/templates/callcenterapp/household_detail.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/templates/callcenterapp/household_edit.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/templates/callcenterapp/householdbid_edit.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/templates/callcenterapp/householdbid_detail.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/templates/callcenterapp/householdbid_list.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/templates/callcenterapp/household_list.html",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/views.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/urls.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/forms.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/callcenter/callcenterapp/models.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/DjangoTut/mysite/blog/admin.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/DjangoTut/mysite/blog/models.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/DjangoTut/mysite/mysite/settings.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/batten/house/models.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Code/Batten/batten/batten/settings.py",
+		"/Users/chrismcfarland/Dropbox/Documents/Kasia/fractal.py",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Project/Coq/simpleadd.v",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4810 Computer Graphics/Project/project.py",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Final/IntEcho.hs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Final/MyBool.hs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Final/MyDiv.hs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Final/Unzip.hs",
+		"/Applications/CoqIdE_8.4pl4.app/Contents/Resources/share/doc/coq/html/refman/style.css",
+		"/Applications/CoqIdE_8.4pl4.app/Contents/Resources/share/coq/coq.lang",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Project/monads.scm",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Assignments/Assignment 11/baby.hs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Assignments/Assignment 11/prep.hs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Project/chapter9.hs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Assignments/Assignment 12/cem8u assignment 12/hw12.hs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Project/v2.hs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Project/stdlib.scm",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4810 Computer Graphics/Project/helping.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4810 Computer Graphics/Project/input12.txt",
+		"/Users/chrismcfarland/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Class/L18_ListMonad.v",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Project/stdlib2.scm",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Project/chapter9-2.hs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/2014 Spring/CS 4501 Reasoning/Class/L16_HApplicative_IP.v",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/hw3/hw3.py",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/hw3/input10.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/hw3/input11.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/hw2/hw2.py",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4501 Reasoning/Quizzes/Quiz 2/quiz2.v",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4501 Reasoning/Quizzes/Quiz 2/quiz2.hs",
+		"/Applications/CoqIdE_v8.4-2014-01-28.app/Contents/Resources/share/coq/coqide-gtk2rc",
+		"/Applications/CoqIdE_v8.4-2014-01-28.app/Contents/Resources/lib/coq/config/coq_config.cmi",
+		"/Applications/CoqIdE_v8.4-2014-01-28.app/Contents/Resources/bin/coq_makefile",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/hw1.py",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/RFID/Trilateration/trilatmethod.py",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input11.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/francy.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input12.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 0/hw0.py",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input10.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input9.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input8.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input7.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input6.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input3.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input5.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input4.txt",
+		"/Users/chrismcfarland/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/rand.py",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input2.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 1/input.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Spring 2014/CS 4810 Computer Graphics/Homework/Homework 0/hw0ex1.txt",
+		"/Users/chrismcfarland/Desktop/wordcount.py",
+		"/Users/chrismcfarland/Desktop/doc/document/word/document.xml",
+		"/Users/chrismcfarland/Desktop/pointerrust/pointers.rs",
+		"/Users/chrismcfarland/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/chrismcfarland/Desktop/tm/refaggregate.csv",
+		"/Users/chrismcfarland/.gitconfig",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Fall 2013/CS 4414 Operating Systems/Assignments/ps3/cs4414-ps3/zhtta.rs",
+		"/Users/chrismcfarland/Desktop/test.rs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Fall 2013/CS 4414 Operating Systems/Assignments/ps3/cs4414-ps3/README.md",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Fall 2013/CS 4414 Operating Systems/Assignments/ps3/cs4414-ps3/config.txt",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Fall 2013/CS 4414 Operating Systems/Assignments/ps3/cs4414-ps3/Makefile",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Fall 2013/CS 4414 Operating Systems/Assignments/ps1/cs4414-ps1/zhttpto.rs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Fall 2013/CS 4414 Operating Systems/Assignments/ps2/cs4414-ps2/gash.rs",
+		"/Users/chrismcfarland/Dropbox/Documents/UVA/Fall 2013/CS 4414 Operating Systems/Assignments/ps3/cs4414-ps3/hello.html",
+		"/Applications/MAMP/htdocs/ssinclude.html"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"phone4",
+			"Household",
+			"household",
+			"neighborhood",
+			"Neighborhood",
+			"neighborhood",
+			"px",
+			"unquote",
+			"write",
+			"raw_inp",
+			"input",
+			"depth bu",
+			"in phong",
+			"depth buff",
+			"or bulb in bulblightList:",
+			"cosAlpha",
+			"drawColor",
+			"pixel.drawColor",
+			"makeport",
+			"ioprimi",
+			"readexpr",
+			"load",
+			"parse error at",
+			"applypro",
+			"apply",
+			"showva",
+			"show",
+			"iothrowserror",
+			"showval",
+			"reflection",
+			"norm(",
+			"nvec",
+			"n_raw",
+			"f_raw",
+			"however",
+			"(",
+			"pixel_collisions",
+			"sun",
+			"print",
+			"))):",
+			"cAddr",
+			"bAddr",
+			"aAddr",
+			"HTTP/1.1 200 OK",
+			"reader",
+			"req_vec",
+			"process_status",
+			"slice",
+			"Menus",
+			"0.027450.0196078",
+			"0.02745",
+			"0.027450.0196078"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"HouseholdBid",
+			"householdbid",
+			"household",
+			"Household",
+			"household",
+			"pixel.color",
+			"refl_index",
+			"getNorm(",
+			"normal",
+			"pixelList",
+			"mainFnAddr",
+			"zFnAddr",
+			"yFnAddr"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 10,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14727,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3471,
+								3471
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1183.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "forms.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2816,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1146,
+								1146
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 139.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/callcenterapp/household_edit.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3751,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1918,
+								1918
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 535.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "templates/callcenterapp/household_detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5261,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2117,
+								2117
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 436.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/callcenterapp/neighborhood_detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3813,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1092,
+								1104
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 179.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "templates/callcenterapp/householdbid_detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11732,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11646,
+								11646
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4534.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "templates/callcenterapp/household_list.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								952,
+								3724
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 982.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "templates/callcenterapp/household_search.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1046,
+								1046
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 142.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "templates/callcenterapp/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								987,
+								987
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 848.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "templates/registration/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1838,
+								1838
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 251.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								667,
+								667
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "admin.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								695,
+								695
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1840,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								825,
+								825
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "callcenter.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"zhtta",
+				"~/Dropbox/Documents/UVA/Fall 2013/CS 4414 Operating Systems/Assignments/ps3/cs4414-ps3/zhtta.rs"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,54 @@
+{% extends 'callcenterapp/base.html' %}
+{% block payment-tab %}class="active"{% endblock payment-tab %}
+{% block content %}
+		<title>Payment List</title>
+
+		<div class="content">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Paiements</div>
+				<div class="panel-body">
+					<p>Paiements détaillés, triés par date et statut. Les nombres négatifs signifient que le vidangeur a reçu plus d’argent que prévu.</p>
+				</div>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Montant dû</th>
+							<th>Prix du vidangeur</th>
+							<th>Montant de l’enchère</th>
+							<th>Montant de l’avance</th>
+							<th>Date d’ouverture</th>
+							<th>Date de fermeture</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for payment in payments %}
+							{% if not payment.payment_completed %}
+							<tr class="warning">
+							{% else %}
+							<tr>
+							{% endif %}
+								<td><a href="{% url 'callcenterapp.views.payment_detail' pk=payment.pk %}">Voir</a></td>
+								<td>{{ payment.amount_due }}</td>
+								<td>{{ payment.supplierbid.full_price }}</td>
+								<td>{{ payment.householdbid.bid_win_pay }}</td>
+								{% if payment.advance_used %}
+									<td>{{ payment.supplierbid.payment_advance }}</td>
+								{% else %}
+									<td>0.00</td>
+								{% endif %}
+								<td>{{ payment.date_opened }}</td>
+								{% if payment.payment_completed %}
+									<td>{{ payment.date_closed }}</td>
+								{% else %}
+									<td>-</td>
+								{% endif %}
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+{% endblock content %}

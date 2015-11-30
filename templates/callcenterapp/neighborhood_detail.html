@@ -1,0 +1,89 @@
+{% extends 'callcenterapp/base.html' %}
+{% block neighborhood-tab %}class="active"{% endblock neighborhood-tab %}
+{% block content %}
+		<title>Détails du quartier</title>
+
+		<div class="content">
+			<div class="panel panel-default">
+				<div class="panel-heading">Détails du quartier</div>
+				<div class="panel-body">
+
+					{% for household in households %}
+						<div class="well well-sm">
+
+							<div class="row">
+								<div class="col-md-3">ID du ménage</div>
+								<div class="col-md-6"><a href="{% url 'callcenterapp.views.household_detail' houseid=household.cleaned_household_id %}">{{ household.cleaned_household_id }}</a></div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">Nom</div>
+								<div class="col-md-6">
+									{{ household.household_firstname }} {{ household.household_lastname }} 
+									{% if household.household_nickname %}
+									 ({{ household.household_nickname }})
+									{% endif %}
+									{% if household.household_head_firstname %}
+									, {{ household.household_head_firstname }} {{ household.household_head_lastname }}
+									{% endif %}
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">Téléphone</div>
+								<div class="col-md-8">
+									{{ household.household_phone1 }}
+									{% if household.household_phone2 %}
+										&bull;
+										{{ household.household_phone2 }}
+									{% endif %}
+									{% if household.household_phone3 %}
+										&bull;
+										{{ household.household_phone3 }}
+									{% endif %}
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">Point de repère principal</div>
+								<div class="col-md-8">{{ household.primary_landmark_name }}</div>
+							</div>
+							{% if household.second_landmark_id %}
+								<div class="row">
+									<div class="col-md-3">Point de repère 2</div>
+									<div class="col-md-8">{{ household.second_landmark_name }}</div>
+								</div>
+							{% endif %}
+							{% if household.third_landmark_id %}
+								<div class="row">
+									<div class="col-md-3">Point de repère 3</div>
+									<div class="col-md-8">{{ household.third_landmark_name }}</div>
+								</div>
+							{% endif %}
+							{% if household.fourth_landmark_id %}
+								<div class="row">
+									<div class="col-md-3">Point de repère 4</div>
+									<div class="col-md-8">{{ household.fourth_landmark_name }}</div>
+								</div>
+							{% endif %}
+							{% if household.fifth_landmark_id %}
+								<div class="row">
+									<div class="col-md-3">Point de repère 5</div>
+									<div class="col-md-8">{{ household.fifth_landmark_name }}</div>
+								</div>
+							{% endif %}
+							{% if household.sixth_landmark_id %}
+								<div class="row">
+									<div class="col-md-3">Point de repère 6</div>
+									<div class="col-md-8">{{ household.sixth_landmark_name }}</div>
+								</div>
+							{% endif %}
+							<div class="row">
+								<div class="col-md-3">Rue principale la plus proche</div>
+								<div class="col-md-8">{{ household.closest_main_street }}</div>
+							</div>
+
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+{% endblock content %}

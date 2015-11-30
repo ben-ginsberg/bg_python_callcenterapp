@@ -1,0 +1,73 @@
+{% extends 'callcenterapp/base.html' %}
+{% block supplierbid-tab %}class="active"{% endblock supplierbid-tab %}
+{% block content %}
+		<title>Détails de l'offre du vidangeur {{ supplierbid.supplier.supply_id }}</title>
+
+		<div class="content">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Détails de l'offre du vidangeur</div>
+				<div class="panel-body">			
+
+					{% if currdate >= supplierbid.offer_start_date and currdate <= supplierbid.offer_end_date %}
+						<div class="bs-callout bs-callout-success">
+							<h4>L’offre de ce vidangeur est active.</h4>
+						</div>
+					{% else %}
+						<div class="bs-callout bs-callout-danger">
+							<h4>This desludger offer is has closed</h4>
+						</div>
+					{% endif %}
+
+					<div class="row">
+						<div class="col-md-4">ID du vidangeur</div>
+						<div class="col-md-8"><a href="{% url 'callcenterapp.views.supplier_detail' supplyid=supplierbid.supplier.supplier_id %}">{{ supplierbid.supplier.supplier_id }}</a></div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Date de début de l'offre</div>
+						<div class="col-md-8">{{ supplierbid.offer_start_date }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Date de fin de l'offre</div>
+						<div class="col-md-8">{{ supplierbid.offer_end_date }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Tank Size</div>
+						<div class="col-md-8">{{ supplierbid.get_tank_size_display }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Prix total</div>
+						<div class="col-md-8">CFA {{ supplierbid.full_price }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Nombre d'acomptes</div>
+						<div class="col-md-8">{{ supplierbid.original_number_payment_advance }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Number of advances remaining</div>
+						<div class="col-md-8">{{ supplierbid.number_payment_advance }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Valeur de chaque acompte</div>
+						<div class="col-md-8">CFA {{ supplierbid.payment_advance }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Enchères gagnées</div>
+						<div class="col-md-8">{{ supplierbid.auctions_won }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Quartiers desservis</div>
+						<div class="col-md-8">
+							{% for nb in supplierbid.neighborhoods_serviced.all %}
+								{{ nb }}
+							{% empty %}
+								No neighborhoods!
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends 'callcenterapp/base.html' %}
+{% block home-tab %}class="active"{% endblock home-tab %}
+{% block content %}
+		<title>Call Center</title>
+
+		<div class="content">
+			<div class="panel panel-default">
+				<div class="panel-heading">Rechercher un ménage</div>
+				<div class="panel-body">
+				
+					<form class="form-horizontal" role="form" action="/household_search/" method="get">
+						<div class="form-group">
+							<label for="houseid" class="col-sm-3 control-label">ID du ménage</label>
+							<div class="col-sm-9">
+								<input type="number" id="houseid" name="houseid">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="firstname" class="col-sm-3 control-label">Prénom</label>
+							<div class="col-sm-9">
+								<input type="text" id="firstname" name="firstname">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-3 control-label">Nom</label>
+							<div class="col-sm-9">
+								<input type="text" id="lastname" name="lastname">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="phonenumber" class="col-sm-3 control-label">Numéro de téléphone</label>
+							<div class="col-sm-9">
+								<input type="number" id="phonenumber" name="phonenumber">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="landmark" class="col-sm-3 control-label">Point de repère ou route principale</label>
+							<div class="col-sm-9">
+								<input type="text" id="landmark" name="landmark">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+				        		<input type="submit" class="btn btn-default" name="submit" id="submit" value="Rechercher">
+				        	</div>
+				        </div>
+				    </form>
+
+				    <hr>
+
+				    <a href="{% url 'callcenterapp.views.household_newnonsurvey'  %}">
+					<button type="button" class="btn btn-primary btn-med">Créer un nouveau ménage</button></a>
+				</div>
+			</div>
+		</div>
+
+{% endblock content %}

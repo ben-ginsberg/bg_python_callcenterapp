@@ -1,0 +1,50 @@
+{% extends 'callcenterapp/base.html' %}
+{% block payment-tab %}class="active"{% endblock payment-tab %}
+{% block content %}
+		<title>Détails du paiement</title>
+
+		<div class="content">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Détails du paiement</div>
+				<div class="panel-body">
+
+					<p>ID de l’enchère du ménage: <a href="{% url 'callcenterapp.views.householdbid_detail' pk=payment.householdbid.pk %}">{{ payment.householdbid }}</a></p>
+					<p>Enchère du vidangeur: <a href="{% url 'callcenterapp.views.supplierbid_detail' pk=payment.supplierbid.pk %}">{{ payment.supplierbid }}</a></p>
+					<p>Date d’ouverture: {{ payment.date_opened }}</p>
+					<p>Montant dû: CFA {{ payment.amount_due }}</p>
+					<p>Répartition du paiement</p>
+					<div style="padding-left: 1em;">
+						{% if payment.supplierbid.full_price > 20000 and payment.householdbid.household.household_category == 4 and payment.householdbid.assigned_supplier_offer.tank_size == 1 %}
+							<p>Prix total: CFA 20000</p>
+						{% elif payment.supplierbid.full_price > 35000 and payment.householdbid.household.household_category == 4 and payment.householdbid.assigned_supplier_offer.tank_size == 2 %}
+						<p>Prix total: CFA 35000</p>
+						{% else %}
+							<p>Prix total: CFA {{ payment.supplierbid.full_price }}</p>
+						{% endif %}
+						<p>Prix de l’enchère: CFA {{ payment.householdbid.bid_win_pay }}</p>
+						{% if payment.advance_used %}
+							<p>Paiement d’avance: CFA {{ payment.supplierbid.payment_advance }}</p>
+						{% else %}
+							<p>Aucun paiement d’avance n’a été utilisé</p>
+						{% endif %}
+					</div> 
+					{% if not payment.payment_completed %}
+					<hr>
+					<form method="POST" class="post-form">{% csrf_token %}
+						<div class="fieldWrapper">
+							{{ form.message.errors }}
+							<label for="payment_completed">Confirmer le paiement:  </label>
+							{{ form.payment_completed }}
+						</div>
+						<br>
+						<button type="submit" class="save btn btn-success saveform">Finaliser le paiement</button>
+					</form>
+					{% else %}
+					<p>Date d'achèvement: {{ payment.date_closed }}</p>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+
+{% endblock content %}

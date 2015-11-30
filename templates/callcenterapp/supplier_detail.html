@@ -1,0 +1,121 @@
+{% extends 'callcenterapp/base.html' %}
+{% block supplier-tab %}class="active"{% endblock supplier-tab %}
+{% block content %}
+		<title>Détails du vidangeur {{ supplier.suppler_id }}</title>
+
+		<div class="content">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Détails du vidangeur</div>
+				<div class="panel-body">
+
+					<div class="row">
+						<div class="col-md-4">ID du vidangeur</div>
+						<div class="col-md-8">{{ supplier.supplier_id }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Nom du chauffeur</div>
+						<div class="col-md-8">{{ supplier.driver_firstname }} {{supplier.driver_lastname}}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Téléphone du chauffeur</div>
+						<div class="col-md-8">
+							{{ supplier.driver_phone1 }}
+
+							{% if supplier.driver_phone2 %}
+								<br>
+								{{ supplier.driver_phone2 }}
+							{% endif %}
+							{% if supplier.driver_phone3 %}
+								<br>
+								{{ supplier.driver_phone3 }}
+							{% endif %}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Numéro de la plaque</div>
+						<div class="col-md-8">
+							{{ supplier.truck1_plate }}
+							{% if supplier.truck2_plate %}
+								<br>
+							{{ supplier.truck2_plate }}
+						{% endif %}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Taille du camion</div>
+						<div class="col-md-8">
+							{{ supplier.truck1_volume }}
+							{% if supplier.truck2_volume %}
+								<br>
+								{{ supplier.truck2_volume }}
+							{% endif %}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Enterprise name</div>
+						<div class="col-md-8">{{ supplier.enterprise_name }}</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-4">Nom du propriétaire</div>
+						<div class="col-md-8">{{ supplier.owner_firstname }} {{ supplier.owner_lastname }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Téléphone du propriétaire</div>
+						<div class="col-md-8">
+							{{ supplier.owner_phone1 }}
+							{% if supplier.owner_phone2 %}
+								<br>
+								{{ supplier.owner_phone2 }}
+							{% endif %}
+						</div>
+					</div>
+					{% if supplier.contact_name %}
+						<div class="row">
+							<div class="col-md-4">Contact name</div>
+							<div class="col-md-8">{{ supplier.contact_name }}</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">Téléphone du contact</div>
+							<div class="col-md-8">
+								{{ supplier.contact_phone1 }}
+								{% if supplier.contact_phone2 %}
+									<br>
+									{{ supplier.contact_phone2 }}
+								{% endif %}
+							</div>
+						</div>
+					{% endif %}
+					<br />
+					<div class="row">
+						<div class="col-md-4">Montant payé</div>
+						<div class="col-md-8">{{sum_of_paid_amount}} CFA</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Montant dû</div>
+						<div class="col-md-8">{{sum_of_due_amount}} CFA</div>
+					</div>
+					<br>
+
+					<a href="{% url 'callcenterapp.views.supplierbid_new' supplyid=supplier.supplier_id %}">
+					<button type="button" class="btn btn-primary btn-lg">Nouvelle enchère du vidangeur</button></a>
+
+					<hr>
+					<p>Historique des offres du vidangeur:</p>
+					<div style="padding-left: 1em;">
+						{% for bid in supplierbids %}
+							{% if currdate >= bid.offer_start_date and currdate <= bid.offer_end_date %}
+							    <p><a href="{% url 'callcenterapp.views.supplierbid_detail' pk=bid.pk %}">{{ bid.offer_start_date }} - {{ bid.offer_end_date }} (CFA {{ bid.full_price }}) (Ouvert)</a></p>
+							{% else %}
+								<p><a href="{% url 'callcenterapp.views.supplierbid_detail' pk=bid.pk %}">{{ bid.offer_start_date }} - {{ bid.offer_end_date }} (CFA {{ bid.full_price }}) (Fermée)</a></p>
+							{% endif %}
+						{% empty %}
+						    <p>No bids!</p>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+{% endblock content %}

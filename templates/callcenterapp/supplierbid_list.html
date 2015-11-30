@@ -1,0 +1,56 @@
+{% extends 'callcenterapp/base.html' %}
+{% block supplierbid-tab %}class="active"{% endblock supplierbid-tab %}
+{% block content %}
+		<title>Toutes les offres des vidangeurs</title>
+
+		<div class="content">
+			<div class="panel panel-default">
+				<div class="panel-heading">Toutes les offres des vidangeurs</div>
+				<div class="panel-body">
+
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th></th>
+								<th>ID du vidangeur</th>
+								<th>Date de début</th>
+								<th>Date de fin</th>
+								<th>Quartiers</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							{% for supplierbid in supplierbids %}
+
+								{% if currdate >= supplierbid.offer_start_date and currdate <= supplierbid.offer_end_date %}
+								<tr class="warning">
+								{% else %}
+								<tr>
+								{% endif %}
+
+									<td><a href="{% url 'callcenterapp.views.supplierbid_detail' pk=supplierbid.pk %}">Voir l'offre</a></td>
+									<td>{{ supplierbid.supplier.supplier_id }}
+									<td>{{ supplierbid.offer_start_date }}</td>
+									<td>{{ supplierbid.offer_end_date }}</td>
+									<td> 
+										{% if supplierbid.neighborhoods_serviced_2 %}
+											{{ supplierbid.neighborhoods_serviced_2 }}
+										{% elif not hb.assigned_supplier_offer.neighborhoods_serviced_2 %}
+											{% for nb in hb.assigned_supplier_offer.neighborhoods_serviced.all %}
+												{{ nb }}
+											{% empty %}
+												No neighborhoods!
+											{% endfor %}	
+										{% else %}
+											No neighborhoods!
+										{% endif %}
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+{% endblock content %}

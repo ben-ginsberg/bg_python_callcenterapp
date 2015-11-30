@@ -1,0 +1,40 @@
+{% extends 'callcenterapp/base.html' %}
+{% block supplier-tab %}class="active"{% endblock supplier-tab %}
+{% block content %}
+		<title>Supplier List</title>
+
+		<div class="content">
+			<div class="panel panel-default">
+				<div class="panel-heading">Vidangeurs</div>
+				<div class="panel-body">
+
+					{% for supplier in suppliers %}
+						<div class="well well-sm">
+							<div class="row">
+								<div class="col-md-3">ID</div>
+								<div class="col-md-8"><a href="{% url 'callcenterapp.views.supplier_detail' supplyid=supplier.supplier_id %}">{{ supplier.supplier_id }}</a></div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">Nom du chauffeur</div>
+								<div class="col-md-8">{{ supplier.driver_firstname }} {{ supplier.driver_lastname }}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">Téléphone du chauffeur</div>
+								<div class="col-md-8">{{ supplier.driver_phone1 }}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">Nom du propriétaire</div>
+								<div class="col-md-8">{{ supplier.owner_firstname }} {{ supplier.owner_lastname }}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">Téléphone du propriétaire</div>
+								<div class="col-md-8">{{ supplier.owner_phone1 }}</div>
+							</div>
+							
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+{% endblock content %}

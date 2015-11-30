@@ -1,0 +1,88 @@
+{% extends 'callcenterapp/base.html' %}
+{% block household-tab %}class="active"{% endblock household-tab %}
+{% block content %}
+		<title>Créer un nouveau ménage non-enquêté</title>
+
+		<div class="content">
+			<div class="panel panel-default">
+				<div class="panel-heading">Créer un nouveau ménage non-enquêté</div>
+				<div class="panel-body">
+					<form method="POST" class="post-form form-horizontal" role="form">{% csrf_token %}
+
+						<div class="form-group">
+							<div class="fieldWrapper">
+								<label for="household_firstname" class="col-sm-2 control-label">Prénom</label>
+								<div class="col-sm-10">
+									{{ form.household_firstname }} {{ form.household_firstname.errors }}
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="fieldWrapper">
+								<label for="household_lastname" class="col-sm-2 control-label">Nom</label>
+								<div class="col-sm-10">
+									{{ form.household_lastname }} {{ form.household_lastname.errors }}
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="fieldWrapper">
+								<label for="household_nickname" class="col-sm-2 control-label">Nom usuel</label>
+								<div class="col-sm-10">
+									{{ form.household_nickname }} {{ form.household_nickname.errors }}
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="fieldWrapper">
+								<label for="household_phone1" class="col-sm-2 control-label">Numéros de téléphone</label>
+								<div class="col-sm-10">
+									<div style="padding-bottom:5px">{{ form.household_phone1 }} {{ form.household_phone1.errors }}</div>
+									<div style="padding-bottom:5px">{{ form.household_phone2 }} {{ form.household_phone2.errors }}</div>
+									<div style="padding-bottom:5px">{{ form.household_phone3 }} {{ form.household_phone3.errors }}</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="fieldWrapper">
+								<label for="closest_main_street" class="col-sm-2 control-label">Route principale la plus proche</label>
+								<div class="col-sm-10">
+									{{ form.closest_main_street }} {{ form.closest_main_street.errors }}
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="fieldWrapper">
+								<label for="primary_landmark_id" class="col-sm-2 control-label">Point de repère principal</label>
+								<div class="col-sm-10">
+									{{ form.primary_landmark_id }} {{ form.primary_landmark_id.errors }}
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="fieldWrapper">
+								<label for="household_is_claiming_survey" class="col-sm-2 control-label">Le ménage prétend-il avoir été enquêté?</label>
+								<div class="col-sm-10">
+									{{ form.household_is_claiming_survey }} {{ form.household_is_claiming_survey.errors }}
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="fieldWrapper">
+								<label for="household_notes" class="col-sm-2 control-label">Observations du ménage </label>
+								<div class="col-sm-10">
+									{{ form.household_notes }} {{ form.household_notes.errors }}
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="save btn btn-primary saveform">Créer un nouveau ménage</button>
+							</div>
+						</div>
+				</form>
+				</div>
+			</div>
+		</div>
+
+{% endblock content %}

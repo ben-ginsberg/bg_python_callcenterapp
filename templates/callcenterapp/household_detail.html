@@ -1,0 +1,484 @@
+{% extends 'callcenterapp/base.html' %}
+{% block household-tab %}class="active"{% endblock household-tab %}
+{% block content %}
+		<title>Détails du ménage {{ household.cleaned_household_id }}</title>
+
+		<div class="content">
+			<div class="panel panel-default">
+				<div class="panel-heading">Détails du ménage</div>
+				<div class="panel-body">
+
+					{% if household.household_is_survey and not household.household_is_fictitious and not household.household_category == 4 and not household.household_category == 3 and not household.household_category == 2 %}
+						<div class="bs-callout bs-callout-success">
+							<h4>Ménage de l'enquête</h4>
+							<p>Ce ménage a été enquêté</p>
+						</div>
+					{% elif household.household_is_fictitious %}
+						<div class="bs-callout bs-callout-danger">
+							<h4>Fictitious Household</h4>
+							<p>This household is used to hold the initial fictitious bids</p>
+						</div>
+					{% elif not household.household_is_survey and not household.household_category == 4 and not household.household_category == 3 and not household.household_category == 1 %}
+						<div class="bs-callout bs-callout-danger">
+							<h4>Non-Survey Household</h4>
+							<p>This household is not part of the initial survey, or its proper survey ID could not be located.</p>
+						</div>
+					{% elif household.household_category == 3 %}
+						<div class="bs-callout bs-callout-success">
+							<h4>Ménage à prix fixe</h4>
+							<p>Ce message est dans le groupe des prix fixes.</p>
+						</div>
+					{% elif household.household_category == 4 %}
+						<div class="bs-callout bs-callout-success">
+							<h4>Ménage du groupe 4</h4>
+							<p>Ce ménage est dans le groupe des offres compétitives</p>
+						</div>
+					{% endif %}
+
+					<div class="row">
+						<div class="col-md-4">ID du ménage</div>
+						<div class="col-md-8">{{ household.cleaned_household_id }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Nom</div>
+						<div class="col-md-8">{{ household.household_firstname }} {{ household.household_lastname }} {% if household.household_nickname %} ({{ household.household_nickname }}){% endif %}</div>
+					</div>
+					{% if household.household_head_firstname %}
+					<div class="row">
+						<div class="col-md-4">Contact secondaire</div>
+						<div class="col-md-8">{{ household.household_head_firstname }} {{ household.household_head_lastname }}</div>
+					</div>
+					{% endif %}
+					<div class="row">
+						<div class="col-md-4">Téléphone  1</div>
+						<div class="col-md-8">{{ household.household_phone1 }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Téléphone 2</div>
+						<div class="col-md-8">{{ household.household_phone2 }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Téléphone 3</div>
+						<div class="col-md-8">{{ household.household_phone3 }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Nom du quartier</div>
+						<div class="col-md-8">{{ household.neighborhood_name }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Point de repère principal</div>
+						<div class="col-md-8">{{ household.primary_landmark_name }}</div>
+					</div>
+					{% if household.second_landmark_id %}
+						<div class="row">
+							<div class="col-md-4">Point de repère secondaire</div>
+							<div class="col-md-8">
+								{{ household.second_landmark_name }}
+								{% if household.third_landmark_id %}
+									<br>
+									{{ household.third_landmark_name }}
+								{% endif %}
+								{% if household.fourth_landmark_id %}
+									<br>
+									{{ household.fourth_landmark_name }}
+								{% endif %}
+								{% if household.fifth_landmark_id %}
+									<br>
+									{{ household.fifth_landmark_name }}
+								{% endif %}
+								{% if household.sixth_landmark_id %}
+									<br>
+									{{ household.sixth_landmark_name }}
+								{% endif %}
+							</div>
+						</div>
+					{% endif %}
+					<div class="row">
+						<div class="col-md-4">Observations du ménage</div>
+						<div class="col-md-8">{{ household.household_notes }}</div>
+					</div>
+					<br>
+					{% if household.household_category == 3 %}
+						<div class="row">
+							<div class="col-md-4">Prix fixé</div>
+							<div class="col-md-8">CFA {{ household.household_fixed_price }}</div>
+						</div>
+						{% if not household.price_is_accepted %}
+							<div class="row">
+								<div class="col-md-4">Statut</div>
+								<div class="col-md-8">Le message a refuse le prix</div>
+							</div>
+						{% endif %}
+					{% else %}
+						<div class="row">
+							<div class="col-md-4">Offre originale provenant de l’enquête</div>
+							<div class="col-md-8">CFA {{ household.household_survey_bid }}</div>
+						</div>
+					{% endif %}
+					<br>
+
+					{% if household.household_category == 3 %}
+						<a href="{% url 'new_householdbid' houseid=household.cleaned_household_id %}">
+						<button type="button" class="btn btn-primary btn-lg">Accepte le prix fixé</button></a>
+						<a href="{% url 'callcenterapp.views.householdbid_new' houseid=household.cleaned_household_id is_reject=True %}">
+						<button type="button" class="btn btn-primary btn-lg">Refuse le prix fixé</button></a>
+					{% elif household.household_category == 4 %}
+					<form name="cpmpetativehousehold-form" method="POST" role="form"> {% csrf_token %}
+					{% if not household.is_hh_select_tank  %}
+					<!-- Here we show a form -->
+					<hr>
+					<div class="row">
+						<div class="col-md-4">Petite fosse</div>
+						<div class="col-md-8"><input type="radio" name="tank_size" value="1" checked required></div>
+					</div>
+					<br />
+					<div class="row">
+						<div class="col-md-4">Grande fosse</div>
+						<div class="col-md-8"><input type="radio" name="tank_size" value="2"></div>
+					</div>
+					<div class="row">
+					<div class="col-md-6"></div>
+					<div class="col-md-6"><input type="submit" name="sizeoftank" class="btn btn-primary btn-lg" value="Soumettre"></div>
+				</div>
+					<hr>
+					{% else %}
+						<hr>
+						{% if competative_supplierbid_list %}
+						<h4>Vidangeurs en compétition</h4>
+						{% for supplier_bid in competative_supplierbid_list %}
+						<input type="hidden" id="compitativeSupplier{{ forloop.counter }}" name="compitativeSupplier{{ forloop.counter }}" value={{supplier_bid.pk}}>
+							<!--<h5>Vidangeur #{{ forloop.counter }} </h5> -->
+							<div class="row">
+								<div class="col-md-4">ID du vidangeur</div>
+								<div class="col-md-8">{{ supplier_bid.supplier.supplier_id }}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">Prix</div>
+								<div class="col-md-8">CFA {{ supplier_bid.full_price}}</div>
+							</div>
+							<div class="row">
+							<div class="col-md-4">Rank</div>
+							<div class="col-md-8">{{ supplier_bid.supplier_rank}}</div>
+						</div>
+							<div class="row">
+								<div class="col-md-4">Nom de l’entreprise</div>
+									<div class="col-md-2">
+									{% if supplier_bid.supplier.enterprise_name %}
+										{{ supplier_bid.supplier.enterprise_name }}
+									{% else %}
+										None
+									{% endif %}
+									</div>
+									{% if household.price_is_accepted %}
+										<div class="col-md-6">
+											{% if listed_price_option == True %}
+												<a href="{% url 'bids_accepted_on_list_price' houseid=household.cleaned_household_id supplier_bid_id=supplier_bid.id %}">
+												<button type="button" class="btn btn-primary btn-lg compdsdbtns" {{ supplier_bid.is_rejected|yesno:"disabled," }}>Accepte</button></a>
+											{% else %}	
+												<a href="{% url 'callcenterapp.views.householdbid_new_upadte_price' houseid=household.cleaned_household_id supplier_bid_id=supplier_bid.id negotiation_price=negotiation_price %}">
+												<button type="button" class="btn btn-primary btn-lg compdsdbtns" {{ supplier_bid.is_rejected|yesno:"disabled," }}>Accepte</button></a>
+											{% endif %}
+											<a href="{% url 'householdbid_new_reject_suppler' houseid=household.cleaned_household_id supplier_bid_id=supplier_bid.id is_reject=True %}">
+											<button type="button" id="rejectbtn{{ forloop.counter }}" name="rejectbtn{{ forloop.counter }}" class="btn btn-primary btn-lg compdsdbtns" {{ supplier_bid.is_rejected|yesno:"disabled," }}>Refuse</button></a>
+										</div>
+								{% endif %}	
+							</div>
+							<div class="row">
+							<div class="col-md-4">Nom du vidangeur</div>
+								<div class="col-md-8">
+									{{ supplier_bid.supplier.driver_firstname }} &nbsp
+									{{ supplier_bid.supplier.driver_lastname }}
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-md-4">Téléphone du vidangeur</div>
+								<div class="col-md-8">
+									{{ supplier_bid.supplier.driver_phone1 }}
+
+									{% if supplier_bid.supplier.driver_phone2 %}
+										<br>
+										{{ supplier_bid.supplier.driver_phone2 }}
+									{% endif %}
+									
+									{% if supplier_bid.supplier.driver_phone3 %}
+										<br>
+										{{ supplier_bid.supplier.driver_phone3 }}
+									{% endif %}
+								</div>
+							</div>	
+								<div class="row">
+									<div class="col-md-4">Nom du propriétaire</div>
+										<div class="col-md-4">
+											{{ supplier_bid.supplier.owner_firstname }} &nbsp
+											{{ supplier_bid.supplier.owner_lastname }}
+										</div>
+							</div>
+                            <hr>
+						{% endfor %}
+						{% endif %}
+						{% if lowest_supplierbid %}
+						<input type="hidden" id="lowestSupplier" name="lowestSupplier" value={{lowest_supplierbid.pk}}>
+						<h4>Vidangeur au prix le plus bas</h4>
+						<div class="row">
+							<div class="col-md-4">ID du vidangeur</div>
+							<div class="col-md-8">{{ lowest_supplierbid.supplier.supplier_id }}</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">Prix</div>
+							<div class="col-md-8">CFA {{ lowest_supplierbid.full_price }}</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">Rank</div>
+							<div class="col-md-8">{{ lowest_supplierbid.supplier_rank }}</div>
+						</div>
+						<div class="row">
+						<div class="col-md-4">Nom de l’entreprise</div>
+							<div class="col-md-2">
+								{{ lowest_supplierbid.supplier.enterprise_name }} 
+							</div>
+							{% if household.price_is_accepted %}
+							<div class="col-md-6">
+								<a href="{% url 'householdbid_new_acepted_suppler' houseid=household.cleaned_household_id supplier_bid_id=lowest_supplierbid.id %}">
+								<button id="acceptlowestbtn" type="button" class="btn btn-primary btn-lg lowestdsdbtns" {{ lowest_supplierbid.is_rejected|yesno:"disabled," }}>Accepte</button></a>
+								<a href="{% url 'householdbid_new_reject_suppler' houseid=household.cleaned_household_id supplier_bid_id=lowest_supplierbid.id is_reject=True %}">
+								<button type="button" id="rejectlowestbtn" name="rejectlowestbtn" class="btn btn-primary btn-lg lowestdsdbtns" {{ lowest_supplierbid.is_rejected|yesno:"disabled," }}>Refuse</button></a>
+							</div>
+							{% endif %}
+						</div>
+						<div class="row">
+							<div class="col-md-4">Nom du vidangeur</div>
+								<div class="col-md-8">
+									{{ lowest_supplierbid.supplier.driver_firstname }} &nbsp
+									{{ lowest_supplierbid.supplier.driver_lastname }}
+								</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">Téléphone du vidangeur</div>
+							<div class="col-md-8">
+								{{ lowest_supplierbid.supplier.driver_phone1 }}
+
+								{% if lowest_supplierbid.supplier.driver_phone2 %}
+									<br>
+									{{ lowest_supplierbid.supplier.driver_phone2 }}
+								{% endif %}
+								{% if lowest_supplierbid.supplier.driver_phone3 %}
+									<br>
+									{{ lowest_supplierbid.supplier.driver_phone3 }}
+								{% endif %}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">Nom du propriétaire</div>
+								<div class="col-md-8">
+									{{ lowest_supplierbid.supplier.owner_firstname }} &nbsp
+									{{ lowest_supplierbid.supplier.owner_lastname }}
+								</div>
+						</div>
+						<hr>
+						<div class="bs-callout bs-callout-info">
+						<h4>Taille de la fosse</h4>
+						<p>Les offres des fournisseurs pour 
+							{%if lowest_supplierbid.tank_size == 1 %}
+								<strong>petite fosse</strong>
+							{%else%}
+								<strong>grande fosse</strong>
+							{%endif%}
+						</p>
+					</div>
+						<div class="row">
+							<div class="col-md-4"><h4>Prix de négociation</h4></div>
+							<div class="col-md-8"><h4><strong>CFA {{ negotiation_price }}</strong></h4></div>
+						</div>
+						<hr>
+						{% else%}
+						<div class="bs-callout bs-callout-danger">
+							<h4>Aucun vidangeur trouvé</h4>
+                        </div>        
+					</div>
+						{% endif %}
+						<br />
+						<br />
+						{% if not lowest_supplierbid %}
+							<a href="{% url 'callcenterapp.views.householdbid_new' houseid=household.cleaned_household_id negotiation_price=negotiation_price %}">
+							<button type="button" class="btn btn-primary btn-lg" disabled>Le ménage accepte le prix</button></a>
+							<a href="{% url 'callcenterapp.views.household_rejects_bid_price' houseid=household.cleaned_household_id negotiation_price=negotiation_price hh_rejects_price=True%}">
+							<button type="button" name="HH_rejects_bid_price" class="btn btn-primary btn-lg" disabled>Le ménage refuse le prix</button></a>
+						{% else %}
+							<a href="{% url 'callcenterapp.views.householdbid_new' houseid=household.cleaned_household_id negotiation_price=negotiation_price %}">
+							<button type="button" class="btn btn-primary btn-lg">Le ménage accepte le prix</button></a>
+							<a href="{% url 'callcenterapp.views.household_rejects_bid_price' houseid=household.cleaned_household_id negotiation_price=negotiation_price hh_rejects_price=True%}">
+							<button type="button" name="HH_rejects_bid_price" class="btn btn-primary btn-lg">Le ménage refuse le prix</button></a>
+						{% endif %}	
+						{% for bid in householdbids|slice:"1" %}
+							<input type="hidden" id="current_bid" name="current_bid" value={{bid.pk}}>
+							{% if bid.bid_win or not lowest_supplierbid or not household.price_is_accepted %}
+							<input type="submit" id="alternativebidBtn" name="alternativebidBtn" value="Proposer d’autres vidangeurs" class="btn btn-primary btn-lg" disabled>
+							{% else %}
+							<input type="submit" id="alternativebidBtn" name="alternativebidBtn" value="Proposer d’autres vidangeurs" class="btn btn-primary btn-lg">
+							{% endif %}
+						{% empty %}
+						<input type="submit" id="alternativebidBtn" name="alternativebidBtn" value="Proposer d’autres vidangeurs" class="btn btn-primary btn-lg" disabled>
+					    {% endfor %}
+					   <!-- End Household accpeted price check -->
+					    {% endif %} 
+					{% else %}
+						<a href="{% url 'new_householdbid' houseid=household.cleaned_household_id %}">
+						<button type="button" class="btn btn-primary btn-lg">New Bid</button></a>
+					{% endif %}
+						<a href="{% url 'callcenterapp.views.household_edit' houseid=household.cleaned_household_id %}">
+						<button type="button" class="btn btn-primary btn-lg">Editer ménage</button></a>
+						</form>	
+					<hr>
+					<input type="hidden" id="time_minute" name="time_minute" value={{bid_time_minute}}>
+					<input type="hidden" id="time_second" name="time_second" value={{bid_time_seconds}}>
+					{% if household.household_category == 4 and household.price_is_accepted %}
+						{% if bid_time_minute or bid_time_seconds %}
+							<table width="100%">
+ 								<tr>
+ 									<td width="100%" align="center">
+ 										<span class="timeClass">
+ 											<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+ 											<span id="theTime"></span>
+ 										</span>
+ 									</td>
+ 								</tr>
+							</table>
+						{% else %}
+							<div class="bs-callout bs-callout-danger">
+								<h4>Le temps imparti a expiré, merci d’appeler le ménage</h4>
+							</div>
+						{%endif%}		
+					<hr>
+					{%endif%}
+					
+					<p>Historique des enchères</p>
+					<div style="padding-left: 1em;">
+						{% for bid in householdbids %}
+							{% if bid.bid_win %}
+								<p><a href="{% url 'callcenterapp.views.householdbid_detail' pk=bid.pk %}">{{ bid.bid_date }}</a> CFA {{ bid.bid_amount }} (Gagné)</p>
+							{% else %}
+								<p><a href="{% url 'callcenterapp.views.householdbid_detail' pk=bid.pk %}">{{ bid.bid_date }}</a> CFA {{ bid.bid_amount }} (Perdu)</p>
+							{% endif %}
+
+						{% empty %}
+						    <p>Ce ménage n'a pas encore participé à une enchère</p>
+						{% endfor %}
+					</div>
+				</div>
+
+		</div>
+		<!-- Small modal -->
+
+<div class="modal fade bs-expire-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Alert</h4>
+      </div>
+      <div class="modal-body">
+          Timer has been expired. Please call the Household.
+    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+	<script type="text/javascript">
+	{% if not lowest_supplierbid.is_rejected %}
+		$(function(){
+			var compdsdbtns = $('.compdsdbtns'),
+				lowestdsdbtns = $('.lowestdsdbtns'),
+				x = false;
+
+			$.each(compdsdbtns, function(index, value){
+				if( $(value).attr('disabled') != undefined ){
+					x = false;
+				} else {
+					x = true;
+				}
+			});
+			if( $('#rejectbtn1').attr('disabled') == undefined ){
+				if( $('#rejectbtn1').length > 0 )
+					$('#rejectlowestbtn, #acceptlowestbtn').attr('disabled','disabled');
+			}
+			else if( $('#rejectbtn2').attr('disabled') == undefined ){
+				if( $('#rejectbtn2').length > 0 )
+					$('#rejectlowestbtn, #acceptlowestbtn').attr('disabled','disabled');
+			}
+			else if( $('#rejectbtn3').attr('disabled') == undefined ){
+				if( $('#rejectbtn3').length > 0 )
+					$('#rejectlowestbtn, #acceptlowestbtn').attr('disabled','disabled');
+			} else {
+				if( x === true )
+					$('#rejectlowestbtn, #acceptlowestbtn').attr('disabled','disabled')
+				else
+					$('#rejectlowestbtn, #acceptlowestbtn').removeAttr('disabled');
+			}
+
+		});
+		{% endif %}
+		var sec = $("#time_second").val();   // set the seconds
+		var min = $("#time_minute").val();   // set the minutes
+		function countDown() {
+   			sec--;
+  			if (sec == -01) {
+   				sec = 59;
+   				min = min - 1; }
+  			else {
+  				 min = min; }
+
+			if (sec<=9) { sec = "0" + sec; }
+
+  			time = (min<=9 ? "0" + min : min) + " min and " + sec + " sec ";
+
+		if (document.getElementById) 
+			{
+			 document.getElementById('theTime').innerHTML = time;
+			}
+
+		SD=window.setTimeout("countDown();", 1000);
+		if (min == '00' && sec == '00') 
+			{ 
+				$('.bs-expire-modal-sm').modal('show');
+				sec = "00";
+				window.clearTimeout(SD); 
+			}
+		}
+		window.onload = countDown;
+	</script>
+{% if not competative_supplierbid_list and lowest_supplierbid.is_rejected %}
+<script type="text/javascript">
+	$(function(){
+			var compdsdbtns = $('.compdsdbtns'),
+				lowestdsdbtns = $('.lowestdsdbtns'),
+				w = false,
+				y = false;
+
+			$.each(compdsdbtns, function(index, value){
+				if( $(value).attr('disabled') != undefined ){
+					w = false;
+					console.log('F');
+				} else {
+					w = true;
+					console.log('T');
+				}
+			});
+			if ($('#rejectlowestbtn').attr('disabled') != undefined){
+				y = false
+			} else{
+				y = true
+			}
+			if ( w==false && y == false){
+				var current_bid = parseInt($("#current_bid").val());
+				var lower_supplier_bid_id = {{lowest_supplierbid.id}}
+				window.location = '/household/bid/cancel/' + current_bid + '/' + lower_supplier_bid_id;
+
+			}
+		});
+</script>
+{% endif %}
+{% endblock content %}
+	

@@ -1,0 +1,26 @@
+{% extends 'callcenterapp/base.html' %}
+{% block householdcompetitonbid-tab %}class="active"{% endblock householdcompetitonbid-tab %}
+{% block content %}
+		<title>Annuler l’enchère</title>
+		
+	<div class="content">
+		<div class="panel panel-default">
+			<div class="panel-heading">Ménages annuler l'offre</div>
+			<div class="panel-body">
+			Ménage refuse prix, cochez la case ci-dessous et cliquez sur le bouton pour annuler l'offre. S'il vous plaît noter que cette action ne peut être annulée.
+				<hr>
+				<form method="POST" class="form-horizontal post-form">{% csrf_token %}
+
+
+					<div class="fieldWrapper">
+						{{ form.is_hh_refuse_price.errors }}
+						<label for="bid_canceled">Confirmez l’annulation de l’enchère :    </label>
+						{{ form.is_hh_refuse_price }}
+					</div>
+					<br>
+					<button type="submit" class="save btn btn-danger saveform">Annuler l'offre</button>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

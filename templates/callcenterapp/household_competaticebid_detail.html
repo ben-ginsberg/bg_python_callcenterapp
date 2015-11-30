@@ -1,0 +1,274 @@
+{% extends 'callcenterapp/base.html' %}
+
+{% load l10n %}
+{% block householdcompetitonbid-tab %}class="active"{% endblock householdcompetitonbid-tab %}
+{% block content %}
+		<title>Détails de l’enchère du ménage {{ householdbid.pk }}</title>
+
+		<div class="content">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Détails de l’enchère du ménage</div>
+				<div class="panel-body">
+
+					{% if householdbid.household.household_is_fictitious %}
+						<div class="bs-callout bs-callout-danger">
+							<h4>This is a fictitious bid</h4>
+						</div>
+					{% endif %}
+
+					<div class="row">
+						<div class="col-md-4">ID du ménage</div>
+						<div class="col-md-8"><a href="{% url 'callcenterapp.views.household_detail' houseid=householdbid.household.cleaned_household_id %}">{{ householdbid.household.cleaned_household_id }}</a></div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">ID de l’enchère</div>
+						<div class="col-md-8">{{ householdbid.pk }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Quartier</div>
+						<div class="col-md-8">{{ householdbid.household.block_id_neighborhoods }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Montant de l’enchère</div>
+						<div class="col-md-8">CFA {{ householdbid.bid_amount }}</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Date de l’enchère</div>
+						<div class="col-md-8">{{ householdbid.bid_date|localize }}</div>
+					</div>
+					<hr>
+					{% if householdbid.bid_win %}
+						<div class="bs-callout bs-callout-success">
+							<h4>Le ménage a gagné la vente aux enchères</h4>
+							<p>Prix à payer : CFA {{ householdbid.bid_win_pay }}</p>
+						</div>
+
+						{% if not householdbid.no_supplier_found %}
+
+							{% if householdbid.job_complete or householdbid.bid_canceled %}
+								{% if householdbid.bid_canceled and not householdbid.is_hh_refuse_price %}
+									<div class="panel panel-info">
+										<div class="panel-heading">
+											<h3 class="panel-title">L’enchère est fermée</h3>
+										</div>
+										<div class="panel-body">
+											<p>L’enchère a été annulée, soit sur demande du ménage, soit parce qu’aucun vidangeur n’a pu être trouvé.</p>
+										</div>
+									</div>
+									{% elif householdbid.bid_canceled and householdbid.is_hh_refuse_price %}
+									<div class="panel panel-info">
+										<div class="panel-heading">
+											<h3 class="panel-title">L’enchère est fermée</h3>
+										</div>
+										<div class="panel-body">
+											<p>L’enchère a été annulée, sur demande du ménage.</p>
+										</div>
+									</div>	
+								{% else %}
+									<div class="panel panel-info">
+										<div class="panel-heading">
+											<h3 class="panel-title">L’enchère est fermée</h3>
+										</div>
+										<div class="panel-body">
+											<p>Le travail a été terminé avec succès. 
+												{% for pay in payment %}
+													<a href="{% url 'callcenterapp.views.payment_detail' pk=pay.pk %}">Voir la feuille de paiement</a>
+												{% endfor %}
+											</p>
+										</div>
+									</div>
+								{% endif %}
+							{% else %}
+								<div class="btn-group btn-group-justified">
+								  <div class="btn-group">
+								    <a type="button" class="btn btn-success" href="{% url 'callcenterapp.views.householdbid_markcompleted' pk=householdbid.pk %}">Travail terminé</a>
+								  </div>
+								  <div class="btn-group">
+								    <a type="button" class="btn btn-warning" href="{% url 'callcenterapp.views.household_refuse_price' pk=householdbid.pk %}">Ménage refuse prix</a>
+								  </div>
+								  <div class="btn-group">
+								    <a type="button" class="btn btn-danger" href="{% url 'callcenterapp.views.householdbid_cancelbid' pk=householdbid.pk %}">Annuler l’enchère</a>
+								  </div>
+								</div>
+							{% endif %}
+
+							<br>
+							<div class="panel panel-success">
+								<div class="panel-heading">
+									<h3 class="panel-title">Détails du vidangeur</h3>
+								</div>
+								<div class="panel-body">
+
+									<div class="row">
+										<div class="col-md-4">Vidangeur assigné</div>
+										<div class="col-md-8"><a href="{% url 'callcenterapp.views.supplier_detail' supplyid=householdbid.assigned_supplier_offer.supplier_id %}">{{ householdbid.assigned_supplier_offer }}</a></div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">Nom du chauffeur</div>
+										<div class="col-md-8">{{ householdbid.assigned_supplier_offer.supplier.driver_firstname }} {{ householdbid.assigned_supplier_offer.supplier.driver_lastname }}</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">Téléphone du chauffeur</div>
+										<div class="col-md-8">
+											{{ householdbid.assigned_supplier_offer.supplier.driver_phone1}}
+											{% if householdbid.assigned_supplier_offer.supplier.driver_phone2 %}
+												<br>
+												{{ householdbid.assigned_supplier_offer.supplier.driver_phone2 }}
+											{% endif %}
+											{% if householdbid.assigned_supplier_offer.supplier.driver_phone3 %}
+												<br>
+												{{ householdbid.assigned_supplier_offer.supplier.driver_phone3 }}
+											{% endif %}
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">Nom du propriétaire</div>
+										<div class="col-md-8">{{ householdbid.assigned_supplier_offer.supplier.owner_firstname }} {{ householdbid.assigned_supplier_offer.supplier.owner_lastname }}</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">Téléphone du propriétaire</div>
+										<div class="col-md-8">
+											{{ householdbid.assigned_supplier_offer.supplier.owner_phone1 }}
+											{% if householdbid.assigned_supplier_offer.supplier.owner_phone2 %}
+												<br>
+												{{ householdbid.assigned_supplier_offer.supplier.owner_phone2 }}
+											{% endif %}
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">Enterprise name</div>
+										<div class="col-md-8">{{ householdbid.assigned_supplier_offer.supplier.enterprise_name }}</div>
+									</div>
+									{% if householdbid.assigned_supplier_offer.supplier.contact_name %}
+										<div class="row">
+											<div class="col-md-4">Contact name</div>
+											<div class="col-md-8">{{ householdbid.assigned_supplier_offer.supplier.contact_name }}</div>
+										</div>
+									{% endif %}
+									{% if householdbid.assigned_supplier_offer.supplier.contact_phone1 %}
+										<div class="row">
+											<div class="col-md-4">Contact phone</div>
+											<div class="col-md-8">
+												{{ householdbid.assigned_supplier_offer.supplier.contact_phone1 }}
+												{% if householdbid.assigned_supplier_offer.supplier.contact_phone2 %}
+													<br>
+													{{ householdbid.assigned_supplier_offer.supplier.contact_phone2 }}
+												{% endif %}
+											</div>
+										</div>
+									{% endif %}
+
+								</div>
+							</div>
+							<div class="panel panel-info">
+								<div class="panel-heading">
+									<h3 class="panel-title">Détails du ménage</h3>
+								</div>
+								<div class="panel-body">
+
+									<div class="row">
+										<div class="col-md-4">Nom</div>
+										<div class="col-md-8">{{ householdbid.household.household_firstname }} {{ householdbid.household.household_lastname }} {% if householdbid.household.household_nickname %}({{ householdbid.household.household_nickname }}){% endif %}</div>
+									</div>
+									{% if householdbid.household.household_head_firstname %}
+									<div class="row">
+										<div class="col-md-4">contact secondaire</div>
+										<div class="col-md-8">{{ householdbid.household.household_head_firstname }} {{ householdbid.household.household_head_lastname }}</div>
+									</div>
+									{% endif %}
+									<div class="row">
+										<div class="col-md-4">Téléphone</div>
+										<div class="col-md-8">
+											{{ householdbid.household.household_phone1 }}
+											{% if householdbid.household.household_phone2 %}
+												<br>
+												{{ householdbid.household.household_phone2 }}
+											{% endif %}
+											{% if householdbid.household.household_phone3 %}
+												<br>
+												{{ householdbid.household.household_phone3 }}
+											{% endif %}
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">Rue principale la plus proche</div>
+										<div class="col-md-8">{{ householdbid.household.closest_main_street }}</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">Point de repère principal</div>
+										<div class="col-md-8">{{ householdbid.household.primary_landmark_name }}</div>
+									</div>
+									{% if householdbid.household.second_landmark_id %}
+										<div class="row">
+											<div class="col-md-4">Point de repère secondaire</div>
+											<div class="col-md-8">
+												{{ householdbid.household.second_landmark_name }}
+												{% if householdbid.household.third_landmark_id %}
+													<br>
+													{{ householdbid.household.third_landmark_name }}
+												{% endif %}
+												{% if householdbid.household.fourth_landmark_id %}
+													<br>
+													{{ householdbid.household.fourth_landmark_name }}
+												{% endif %}
+												{% if householdbid.household.fifth_landmark_id %}
+													<br>
+													{{ householdbid.household.fifth_landmark_name }}
+												{% endif %}
+												{% if householdbid.household.sixth_landmark_id %}
+													<br>
+													{{ householdbid.household.sixth_landmark_name }}
+												{% endif %}
+											</div>
+										</div>
+									{% endif %}
+									<div class="row">
+										<div class="col-md-4">Coordonnées GPS</div>
+										<div class="col-md-8">{{ householdbid.household.latitude }}, {{ householdbid.household.longitude }}</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">Observations du ménage</div>
+										<div class="col-md-8">{{ householdbid.household.household_comments }}</div>
+									</div>
+									<div class="row">
+										<div class="col-md-4">Observations du l’enchère</div>
+										<div class="col-md-8">{{ householdbid.bid_other_notes }}</div>
+									</div>
+
+								</div>
+							</div>
+							
+						{% else %}
+							<div class="panel panel-warning">
+								<div class="panel-heading">
+									<h3 class="panel-title">Impossible de trouver un vidangeur</h3>
+								</div>
+								<div class="panel-body">
+									<p>Même si le ménage a gagné l’enchère, le système n’a pas pu trouver de vidangeur. Merci de noter l’information suivante et de la signaler:</p>
+									<div style="padding-left: 1em;">
+										<p>ID unique de l’enchère: {{ householdbid.pk }}</p>
+									</div>
+								</div>
+							</div>
+						{% endif %}
+					{% elif householdbid.no_supplier_found and householdbid.bid_canceled and not householdbid.job_complete and not householdbid.assigned_supplier_offer %}
+					<div class="bs-callout bs-callout-danger">
+					<h4>Nous annulons la demande car nous ne sommes pas capable de trouver un vidangeur disponible </h4>
+					</div>
+					{% elif householdbid.bid_canceled %}
+					<div class="bs-callout bs-callout-danger">
+					<h4>Le ménage a refusé le prix</h4>
+					</div>
+					{% else %}
+						<div class="bs-callout bs-callout-danger">
+							<h4>Le ménage a perdu la vente aux enchères.</h4>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+
+
+		</div>
+
+{% endblock content %}

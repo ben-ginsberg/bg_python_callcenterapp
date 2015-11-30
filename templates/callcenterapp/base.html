@@ -1,0 +1,95 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/callcenterapp.css' %}">
+		<link rel="stylesheet" href="{% static 'css/chosen.min.css' %}">
+		<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+		<script src="{% static 'js/datepicker-fr.js' %}"></script>
+		<script src="{% static 'js/chosen.jquery.min.js' %}"></script>
+		
+		<script>
+		$(function() {
+		    $( ".datepicker" ).datepicker({
+		      showOtherMonths: true,
+		      selectOtherMonths: true,
+		      showOn: "both",
+		      buttonImage: "{% static 'css/images/calendar.gif' %}",
+		      buttonImageOnly: true,
+		      buttonText: "Select date"
+		    });
+		    
+		    $( ".datepicker" ).datepicker( "option", $.datepicker.regional["fr"] );
+		    $( "#id_offer_start_date" ).datepicker( "setDate", new Date() );
+		    $( "#id_offer_end_date" ).datepicker( "setDate", +14 );
+		    $( ".datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+		  });
+ 		</script>
+
+ 		<script>
+ 			jQuery(document).ready(function(){
+				$("#id_primary_landmark_id").chosen({
+					no_results_text: "No landmarks found: ",
+					search_contains: true
+				});
+			});
+ 		</script>
+ 		<script>
+ 			jQuery(document).ready(function(){
+				$("#id_neighborhoods_serviced").chosen({
+					width: 320,
+					placeholder_text_multiple: "Select neighborhoods",
+					search_contains: true
+				});
+			});
+ 		</script>
+	</head>
+
+	<body>
+		
+		<div class="page-header">
+			<h1>Centre d'appel d'IPA</h1>
+
+			{% if user.is_authenticated %}
+				<div class="top-login">Vous êtes connecté comme {{ user.username }} <a href="/accounts/logout">[se déconnecter]</a></div>
+			{% else %}
+				<div class="top-login"><a href="/accounts/login">Veuillez vous connecter</a></div>
+			{% endif %}
+		</div>
+			<div class="ccnavbar">
+			<ul class="nav nav-tabs" role="tablist">
+			  <li {% block home-tab %}{% endblock home-tab %} >
+			  <a href="{% url 'callcenterapp.views.index' %}">Accueil</a>
+			  </li>
+			  <li {% block neighborhood-tab %}{% endblock neighborhood-tab %}>
+			  <a href="{% url 'callcenterapp.views.neighborhood_list' %}">Quartiers</a>
+			  </li>
+			  <li {% block household-tab %}{% endblock household-tab %} >
+			  <a href="{% url 'callcenterapp.views.household_list' %}">Ménages</a>
+			  </li>
+			  <li {% block supplier-tab %}{% endblock supplier-tab %}>
+			  <a href="{% url 'callcenterapp.views.supplier_list' %}">Vidangeurs</a>
+			  </li>
+			  <li {% block householdbid-tab %}{% endblock householdbid-tab %}>
+			  <a href="{% url 'callcenterapp.views.householdbid_list' %}">Historique des enchères</a></li>
+			  <li {% block householdfix-tab %}{% endblock householdfix-tab %} >
+			  <a href="{% url 'callcenterapp.views.household_fix_pricebid_list' %}">Historique de prix fixe</a>
+			  </li>
+			  <li {% block householdcompetitonbid-tab %}{% endblock householdcompetitonbid-tab %} >
+			  <a href="{% url 'callcenterapp.views.household_competitonbid_list' %}">Historique des offres compétitives</a>
+			  </li>
+			  <li {% block supplierbid-tab %}{% endblock supplierbid-tab %}><a href="{% url 'callcenterapp.views.supplierbid_list' %}">Historique de l'offre</a></li>
+			  <li {% block payment-tab %}{% endblock payment-tab %} >
+			  <a href="{% url 'callcenterapp.views.payment_list' %}">Paiements</a>
+			  </li>
+			</ul>
+		</div>
+		{% block content %}
+		{% endblock content %}
+
+	</body>
+</html>

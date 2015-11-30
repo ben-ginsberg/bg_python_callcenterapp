@@ -1,0 +1,39 @@
+{% extends 'callcenterapp/base.html' %}
+{% block householdfix-tab %}class="active"{% endblock householdfix-tab %}
+{% block content %}
+		<title>Marquer l’enchère comme terminée</title>
+		
+	<div class="content">
+		<div class="panel panel-default">
+			<div class="panel-heading">Marquer l’enchère comme terminée</div>
+			<div class="panel-body">
+				Si le ménage dit que le travail est terminé, merci de remplir les informations ci-dessous et de les soumettre afin de finaliser l’enchère et de générer le paiement.
+				<hr>
+				<form method="POST" class="form-horizontal post-form" role="form">{% csrf_token %}
+
+					<div class="form-group">
+						<div class="fieldWrapper">
+							<label for="household_rating_supplier" class="col-sm-3 control-label">Note du vidangeur par le ménage</label>
+							<div class="col-sm-9">
+								{{ form.household_rating_supplier }} (1 = le plus bas, 5 = le plus haut, « -- » = n’a pas répondu) {{ form.household_rating_supplier.errors }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="fieldWrapper">
+							<label for="household_comments" class="col-sm-3 control-label">Commentaires du ménage à propos du vidangeur et/ou du processus en général</label>
+							<div class="col-sm-9">
+								{{ form.household_comments }} {{ form.household_comments.errors }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-9">
+							<button type="submit" class="save btn btn-success saveform">Marquer comme terminé</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}

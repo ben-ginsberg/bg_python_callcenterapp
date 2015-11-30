@@ -1,0 +1,81 @@
+{% extends 'callcenterapp/base.html' %}
+{% block householdbid-tab %}class="active"{% endblock householdbid-tab %}
+{% block content %}
+		<title>Toutes les enchères du ménage</title>
+
+		<div class="content">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Toutes les enchères du ménage</div>
+				<div class="panel-body">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>ID de l’enchère</th>
+								<th>ID du ménage</th>
+								<th>Date</th>
+								<th>Gagné/Perdu</th>
+								<th>Statut</th>
+								<th>Taille de la fosse</th>
+								<th>Long tuyau</th>
+								<th>Quartiers</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for hb in householdbids %}
+								{% if hb.bid_win and not hb.bid_canceled and not hb.job_complete %}
+								<tr class="warning">
+								{% else %}
+								<tr>
+								{% endif %}
+									<td><a href="{% url 'callcenterapp.views.householdbid_detail' pk=hb.pk %}">{{hb.pk}}</a></td>
+									<td>{{ hb.household.cleaned_household_id }}</td>
+									<td>{{ hb.bid_date }}</td>
+									{% if hb.bid_win %}
+										<td>Gagné</td>
+									{% else %}
+										<td>Perdu</td>
+										<td>Fermée</td>
+									{% endif %}
+									{% if hb.bid_win and not hb.bid_canceled and not hb.job_complete %}
+										<td>Ouvert</td>
+									{% endif %}
+									{% if hb.bid_win and not hb.bid_canceled and hb.job_complete %}
+										<td>Fermée</td>
+									{% endif %}
+									{% if hb.bid_win and hb.bid_canceled %}
+										<td>Annulée</td>
+									{% endif %}
+									{% if hb.bid_exception_1 %}
+										<td>Grande fosse</td>
+									{% else %}
+										<td>Petite fosse</td>	
+									{% endif %}
+									{% if hb.bid_exception_2 %}
+										<td>Oui</td>
+									{% else %}
+										<td>Non</td>	
+									{% endif %}
+									<td> 
+										{% if hb.assigned_supplier_offer.neighborhoods_serviced_2 %}
+											{{ hb.assigned_supplier_offer.neighborhoods_serviced_2 }}
+										{% elif not hb.assigned_supplier_offer.neighborhoods_serviced_2 %}
+											{% for nb in hb.assigned_supplier_offer.neighborhoods_serviced.all %}
+												{{ nb }}
+											{% empty %}
+												No neighborhoods!
+											{% endfor %}	
+										{% else %}
+											No neighborhoods!
+										{% endif %}
+									</td>
+
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+{% endblock content %}

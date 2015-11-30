@@ -1,0 +1,26 @@
+{% extends 'callcenterapp/base.html' %}
+{% block householdcompetitonbid-tab %}class="active"{% endblock householdcompetitonbid-tab %}
+{% block content %}
+		<title>Annuler l’enchère</title>
+		
+	<div class="content">
+		<div class="panel panel-default">
+			<div class="panel-heading">Annuler l’enchère du ménage</div>
+			<div class="panel-body">
+				Si pour une raison quelconque le travail ne peut pas être terminé par un des vidangeurs, ou si le ménage ne veux plus du travail, cochez la case ci-dessous et cliquez sur le bouton afin d’annuler l’offre. Attention, cette action ne peut pas être annulée.
+				<hr>
+				<form method="POST" class="form-horizontal post-form">{% csrf_token %}
+
+
+					<div class="fieldWrapper">
+						{{ form.bid_canceled.errors }}
+						<label for="bid_canceled">Confirmez l’annulation de l’enchère :    </label>
+						{{ form.bid_canceled }}
+					</div>
+					<br>
+					<button type="submit" class="save btn btn-danger saveform">Annuler l’enchère</button>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}
